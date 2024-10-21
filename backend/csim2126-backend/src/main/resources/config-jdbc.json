@@ -1,0 +1,7 @@
+{
+  "databaseType": "jdbc",
+  "driverClass": "com.mysql.jdbc.Driver",
+  "jdbcUrl": "jdbc:mysql://csim2126-db/csim2126",
+  "username": "user",
+  "password": "password"
+}

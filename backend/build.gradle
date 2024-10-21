@@ -1,0 +1,23 @@
+allprojects {
+    group = 'edu.bbte.idde.csim2126'
+    version = '1.0-SNAPSHOT'
+}
+
+subprojects {
+    apply plugin : 'java'
+    apply from: "$rootDir/lint.gradle"
+
+    sourceCompatibility = '17'
+    targetCompatibility = '17'
+
+    dependencies {
+        implementation group: 'org.slf4j', name: 'slf4j-api', version: '2.0.9'
+        runtimeOnly group: 'ch.qos.logback', name: 'logback-classic', version: '1.4.11'
+        compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.30'
+        annotationProcessor group: 'org.projectlombok', name: 'lombok', version: '1.18.30'
+    }
+
+    repositories {
+        mavenCentral();
+    }
+}

@@ -1,0 +1,39 @@
+# run: docker-compose up --build
+# close: docker-compose down
+# db delete: docker-compose down --volumes
+# init: docker exec -i csim2126-db mysql -u user -ppassword <setup.sql
+# db run: docker-compose up csim2126-db -d
+
+version: "3.5"
+
+services:
+  db:
+    image: mysql:8.0.33
+    container_name: mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: csim2126
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    ports:
+      - 3306:3306
+    volumes:
+      - "iddevolume:/var/lib/mysql"
+
+volumes:
+  iddevolume:
+
+# FOR TOMCAT:
+#  csim2126-web:
+#    build:
+#      context: .
+#      dockerfile: Dockerfile
+#    container_name: csim2126-web
+#    ports:
+#      - "8080:8080"
+#    depends_on:
+#      - csim2126-db
+#    environment:
+#      CONFIG_FILE : "/config-jdbc.json"

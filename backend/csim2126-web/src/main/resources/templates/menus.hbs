@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <link href="./style.css" rel="stylesheet">
+        <title>Menus</title>
+    </head>
+    <body>
+        {{#each menus}}
+            <div class="div">
+                <p>Menu ID: {{id}}</p>
+                <p>Name: {{name}}</p>
+                <p>Category: {{category}}</p>
+                <p>Description: {{description}}</p>
+                <p>Ingredients: {{ingredients}}</p>
+            </div>
+        {{/each}}
+        <form action="logout" method="get">
+            <input type="submit" value="Logout">
+        </form>
+    </body>
+</html>

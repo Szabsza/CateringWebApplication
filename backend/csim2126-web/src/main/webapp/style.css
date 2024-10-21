@@ -1,0 +1,15 @@
+.div {
+    margin: 10px auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    background: antiquewhite;
+    border: black solid;
+    border-radius: 20px;
+}
+
+.div p {
+    font-family: "Segoe Print", serif;
+    font-size: 16px;
+    margin: auto;
+}

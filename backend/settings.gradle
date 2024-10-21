@@ -1,0 +1,6 @@
+rootProject.name = 'csim2126-idde'
+//include 'csim2126-backend'
+//include 'csim2126-desktop'
+//include 'csim2126-web'
+include 'csim2126-springbackend'
+
